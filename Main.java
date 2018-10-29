@@ -367,12 +367,21 @@ class Main
          * Use a for loop to print out the names of monster that start with
          * a vowel
          */
-        String[] monsterArray={"Cookie", "Grover","Oscar the Grouch", "Elmo",
-            "Rosita"};
-            String s = monsterArray[0];
-            char c=monsterArray[i].toLowerCase().charAt(0);
-            if (c=='a' || c=='e'......
-            if (s.toLowerCase().startsWith
+        /*
+         */
+        System.out.println("** Task 13 **");
+        String[] monsterArray={ "Cookie", "Grover", "Oscar the Grouch" , "Elmo", "Rosita"};
+
+
+        for (int i=0 ; i<monsterArray.length; i++)
+            System.out.println(" [ "+i+"] "+monsterArray[i]);
+
+        for (int i=0 ; i<monsterArray.length; i++)
+           {
+              char c= monsterArray[i].toLowerCase().charAt(0);
+              if (c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+                System.out.println(monsterArray[i]); 
+            }
          /*
           * Task 14
           * Create an array of integers from 3 to 94 and call it arx
@@ -388,7 +397,45 @@ class Main
           *      So arindex[0]=2
           *         arindex[1]=5
           */
-         
+          System.out.println("** Task 14 **");
+ 
+          // Set Start parameters. I do not use 3 and 94 directly in program to avoid
+          // having "magic" numbers. So if I want to change 3 or 94, I change it in one
+          // place and the program is fine.
+          int start = 3;
+          int end = 94;
+          int n14=end - start+1;
+
+          // This array will hold the number from "start" to "end"
+          int[] arx = new int[n14];
+
+          // This counts how many numbers are divisible by 3 so I can make a smaller array
+
+          int count14index=0;
+
+          // put the numbers into arx[] and also count how many are divisible by 3
+          for (int i=0 ; i<n14 ; i++)
+          {
+              arx[i]=start+i;
+              if (arx[i]%3==0)
+                count14index++;
+          }
+          // Make an array of exactly the right size.
+
+          int[] arxindex = new int[count14index];
+          int k14=0;
+          for (int i=0 ; i<n14 ; i++)
+          {
+              if (arx[i]%3==0)
+              { 
+                  arxindex[k14]=i;
+                  k14++;
+               }
+            }
+
+            //Print out the array 
+          for (int i=0 ; i<count14index; i++)
+             System.out.println(arxindex[i]);
          /*
           * Create an arrary called "fb" and calculate the
           * first 10 fibonacci sequence.  You start with
